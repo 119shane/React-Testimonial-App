@@ -19,7 +19,6 @@ export default function TestamonialsApp() {
         .then((json) => setItems(json));
     },[testimonials])
 
-    console.log(items)
 
   return (
     <div>
@@ -46,10 +45,10 @@ export default function TestamonialsApp() {
       </div>
       <h1 className='sub_title text_center m-t1'>{!testimonials ? "Select One from Above" : testimonials}</h1>
 
-      <div style={{display: "flex", flexDirection: "column"}}>{!items
+      <div className='card_container'>{!items
         ? null
         : items.map(item=>(
-            <div style={{width: "500px", border: "1px solid black", padding: "5px 10px", textAlign:"center", margin: "20px auto", boxShadow: "2px 2px 5px greenyellow"}} key={item.id}>
+            <div className='card' key={item.id}>
 
                 <div style={{height: "26px", width: "26px", border: "1px solid greenyellow", borderRadius: "50%", display: "grid", placeContent: "center", marginBottom: '0'}}>
                     <small>{item.id}</small>
